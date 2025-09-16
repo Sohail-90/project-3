@@ -162,4 +162,20 @@ function removetasks(index) {
         return;
     }
 }
-window.onload = populateTasks;
+const buttons = document.querySelectorAll('.ppg');
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    }
+    );
+});
+function setActivebutton() {
+    const allButton = document.getElementById('All');
+    allButton.classList.add('active');
+}
+window.onload = function () {
+    populateTasks();    
+    setActivebutton('All');
+}
+

@@ -53,27 +53,90 @@ h1 {
     padding-bottom: 2px;
 }
 
-.ppg::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: blue;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.2s ease-out;
-}
 .ppg:hover {
     color: blue;
 }
-.ppg:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+.active {
+    color: blue;
+    border-bottom: 3px solid blue;
 }
-.ppg:active {
-    color: black;
+@media (max-width: 600px) {
+    .p-4 {
+        max-width: 80%;
+        padding: 20px;
+    }
+
+    .todo-input {
+        font-size: 14px;
+    }
+
+    .bi {
+        font-size: 20px;
+    }
 }
+@media (max-width: 450px) {
 
+    .todo-input {
+        font-size: 12px;
+    }
 
+    .bi {
+        font-size: 16px;
+    }
+    #add {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    #taskInput {
+        font-size: 14px;
+        padding: 8px;
+        width: 100%;
+    }
+    #taskList {
+        gap: 10px;
+        margin-left: 0;
+    }
+    #clearAll {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+    .me-3 {
+        font-size: 15px;
+    }
+    .bi {
+        font-size: 20px;
+    }
+}
+@media (max-width: 350px) {
+    .p-4 {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 18px;
+    }
+    .todo-input {
+        font-size: 10px;
+    }
+    .bi {
+        font-size: 14px;
+    }
+    #taskInput {
+        font-size: 12px;
+        padding: 6px;
+    }
+    #taskList {
+        gap: 8px;
+        margin-left: 0;
+        font-size: 12px;
+    }
+    .me-3 {
+        font-size: 12px;
+    }
+    #clearAll {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+    .bi {
+        font-size: 20px;
+    }
+}
