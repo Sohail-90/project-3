@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body class="bg-primary">
+    <section class="todo">
+        <div class="p-4 mt-5 d-flex flex-column align-items-center bg-white rounded shadow-lg mx-auto"
+            style="max-width: 500px;">
+            <h1 class="text-center mb-4">My To-Do List</h1>
+            <div class="todo-input bg-light d-flex align-items-center rounded">
+                <i class="bi bi-filter-left"></i>
+                <input type="text" placeholder="Add a new task" id="taskInput"
+                    class="border-0 bg-light flex-grow-1 mx-2">
+                <button class="btn btn-primary d-flex align-items-center" id="add">Add</button>
+            </div>
+            <div class="pages d-flex justify-content-between align-items-center w-100">
+                <ul class="list-unstyled mt-4 d-flex" id="taskList">
+                    <li><a href="#" class="ppg" id="All">All</a></li>
+                    <li><a href="#" class="ppg" id="completed">Done</a></li>
+                    <li><a href="#" class="ppg" id="Pending">Pending</a></li>
+                </ul>
+                <button class="btn btn-primary" id="clearAll">All clear</button>
+            </div>
+            <ul class="list-unstyled mt-4 w-100" id="tasksContainer">
+            </ul>
+            <p class="text-center mt-3" id="taskCount">No tasks</p>
+
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
