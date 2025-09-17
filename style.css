@@ -54,11 +54,11 @@ h1 {
 }
 
 .ppg:hover {
-    color: blue;
+    color: #0d6efd;
 }
 .active {
-    color: blue;
-    border-bottom: 3px solid blue;
+    color: #0d6efd;
+    border-bottom: 3px solid #0d6efd;
 }
 @media (max-width: 600px) {
     .p-4 {
