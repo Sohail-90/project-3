@@ -1,5 +1,7 @@
+// Task Management Application
+// Data Structure: Array of Task Objects { task: string, completed: boolean }
 let editIndex = null;
-
+// Add or Update Task
 document.getElementById('add').addEventListener('click', function () {
     const taskInput = document.getElementById('taskInput').value;
     let taskss = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -28,7 +30,7 @@ document.getElementById('add').addEventListener('click', function () {
         populateTasks();
     }
 });
-
+// Populate Tasks from Local Storage
 function populateTasks() {
     const taskss = JSON.parse(localStorage.getItem('tasks')) || [];
     const tasksContainer = document.getElementById('tasksContainer');
@@ -57,7 +59,7 @@ function populateTasks() {
     });
     document.getElementById('taskCount').innerText = taskss.length + ' Tasks';
 }
-
+// Toggle Task Completion
 function toggleTask(index) {
     const taskss = JSON.parse(localStorage.getItem('tasks')) || [];
     taskss[index].completed = !taskss[index].completed;
@@ -67,6 +69,7 @@ function toggleTask(index) {
 document.getElementById('All').addEventListener('click', function () {
     populateTasks();
 });
+// Show Completed Tasks
 document.getElementById('completed').addEventListener('click', function () {
     const taskss = JSON.parse(localStorage.getItem('tasks')) || [];
     const completedTasks = taskss.filter(task => task.completed);
@@ -97,6 +100,7 @@ document.getElementById('completed').addEventListener('click', function () {
     document.getElementById('taskCount').innerText = taskss.length + ' ' + 'Tasks' + ' ' + completedTasks.length + ' ' + ' Done';
 }
 );
+// Show Pending Tasks
 document.getElementById('Pending').addEventListener('click', function () {
     const taskss = JSON.parse(localStorage.getItem('tasks')) || [];
     const pendingTasks = taskss.filter(task => !task.completed);
@@ -128,6 +132,7 @@ document.getElementById('Pending').addEventListener('click', function () {
     document.getElementById('taskCount').innerText = taskss.length + ' ' + 'Tasks' + ' ' + pendingTasks.length + ' Pending';
 }
 );
+// Clear All Tasks with Confirmation
 document.getElementById('clearAll').addEventListener('click', function () {
     const taskss = JSON.parse(localStorage.getItem('tasks')) || [];
     if (taskss.length === 0) {
@@ -143,6 +148,7 @@ document.getElementById('clearAll').addEventListener('click', function () {
         return;
     }
 });
+// Edit Task with Pre-filled Input
 function edittasks(index) {
     const taskss = JSON.parse(localStorage.getItem('tasks')) || [];
     const taks = taskss[index];
@@ -150,6 +156,7 @@ function edittasks(index) {
     editIndex = index;
     document.getElementById('add').innerText = 'Update';
 }
+// Remove Task with Confirmation
 function removetasks(index) {
     const confirmed = confirm('Are you sure you want to remove this task?');
     if (confirmed) {
@@ -162,6 +169,7 @@ function removetasks(index) {
         return;
     }
 }
+// Active Button Toggle
 const buttons = document.querySelectorAll('.ppg');
 buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -170,12 +178,14 @@ buttons.forEach(button => {
     }
     );
 });
+// Set Active Button on Load
 function setActivebutton() {
     const allButton = document.getElementById('All');
     allButton.classList.add('active');
 }
+// Initial Population of Tasks
 window.onload = function () {
-    populateTasks();    
+    populateTasks();
     setActivebutton('All');
 }
 
